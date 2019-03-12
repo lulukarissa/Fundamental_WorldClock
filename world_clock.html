@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Jam Dunia</h1>
+    <table>
+            <tbody>
+                <tr>
+                    <th id="0"> </th>
+                    <th>GMT+0 London, Inggris</th>
+                </tr>
+                <tr>
+                    <th id="1"></th>
+                    <th>GMT+1 Paris, Perancis</th>
+                </tr>
+                <tr>
+                    <th id="2"></th>
+                    <th>GMT+2 Istanbul, Turki</th>
+                </tr>
+                <tr>
+                    <th id="3"></th>
+                    <th>GMT+3 Moskow, Rusia</th>
+                </tr>
+                <tr>
+                    <th id="4"></th>
+                    <th>GMT+4 Abu Dhabi, UEA</th>
+                </tr>
+                <tr>
+                    <th id="5"></th>
+                    <th>GMT+5 Islamabad, Pakistan</th>
+                </tr>
+                <tr>
+                    <th id="6"></th>
+                    <th>GMT+6 Astana, Kazakhstan</th>
+                </tr>
+                <tr>
+                    <th id="7"></th>
+                    <th>GMT+7 Jakarta, Indonesia</th>
+                </tr>
+                <tr>
+                    <th id="8"></th>
+                    <th>GMT+8 Beijing, China</th>
+                </tr>
+                <tr>
+                    <th id="9"></th>
+                    <th>GMT+9 Tokyo, Jepang</th>
+                </tr>
+
+
+
+        
+            </tbody>
+
+    </table>
+    <script>
+        var zona = ['0','1','2','3','4','5','6','7','8','9']
+        setInterval(
+            function waktu(){
+                for(i=0; i<zona.length; i++){
+                    var x = new Date()
+                    x.setHours(x.getHours() +i -7, x.getMinutes() +i -7, x.getSeconds() +i -7)
+                    var jam = x.getHours()
+                    var menit = x.getMinutes()
+                    var detik = x.getSeconds()
+                   
+
+                    if(jam<10){
+                        var jam2 = '0'+ jam
+                    }
+                    else{
+                        var jam2 = jam
+                    }
+
+                    if(menit<10){
+                        var menit2 = '0'+ menit
+                    }
+                    else{
+                        var menit2 = menit
+                    }
+
+                    if(detik<10){
+                        var detik2 = '0'+ detik
+                    }
+                    else{
+                        var detik2 = detik
+                    }
+
+                    var wak = jam2 + ':' + menit2 + ':' + detik2 + '*'
+
+                    document.getElementById(zona[i]).innerHTML = wak
+                }
+            }, 1000
+    )
+        </script>
+    </center>
+</body>
+</html>
